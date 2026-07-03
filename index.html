@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Corso pratico in 16 moduli sul dropshipping con AI: metodo veloce + metodo avanzato con deep research, conversione e calcolatore di profittabilità interattivo. Materiale didattico ricostruito da due video, con reality check critico.">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Corso — Da zero a 1K con lo store AI">
+<meta property="og:description" content="16 moduli, 2 metodi, un calcolatore di profittabilità. Con reality check onesto.">
+<title>Corso — Da zero a 1K con lo store AI</title>
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  img { max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :root {
+    --bg: #ECEEF1;
+    --surface: #FFFFFF;
+    --surface-2: #F5F6F8;
+    --ink: #191C22;
+    --ink-soft: #4A505B;
+    --ink-faint: #7B828E;
+    --line: #D9DDE3;
+    --line-strong: #C3C9D1;
+    --emerald: #1F6E4C;
+    --emerald-soft: #E4F0EA;
+    --amber: #B26B15;
+    --amber-soft: #FBEFDC;
+    --rose: #A8323A;
+    --rose-soft: #F6E3E4;
+    --shadow: 0 1px 2px rgba(25,28,34,.04), 0 8px 24px -12px rgba(25,28,34,.14);
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+    --wrap: 62rem;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+
+  .page {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding: clamp(1rem, 4vw, 3.5rem) clamp(1rem, 4vw, 2rem);
+  }
+  .wrap { max-width: var(--wrap); margin: 0 auto; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: var(--ink);
+    color: #EDEFF2;
+    border-radius: 18px;
+    padding: clamp(1.6rem, 5vw, 3.2rem);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(120% 90% at 100% 0%, rgba(31,110,76,.35), transparent 55%),
+      radial-gradient(90% 80% at 0% 100%, rgba(178,107,21,.22), transparent 60%);
+    pointer-events: none;
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .kicker {
+    font-size: .74rem; letter-spacing: .18em; text-transform: uppercase;
+    color: #9BE3C0; font-weight: 700; margin: 0 0 1rem;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.05;
+    margin: 0 0 1rem; text-wrap: balance; letter-spacing: -.01em;
+  }
+  .hero h1 em { font-style: italic; color: #9BE3C0; }
+  .hero .lede { font-size: clamp(1rem, 2.4vw, 1.2rem); color: #C7CCD4; max-width: 44ch; margin: 0; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: .5rem 1.4rem;
+    margin-top: 1.8rem; padding-top: 1.4rem;
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
+  .meta-row .m { display: flex; flex-direction: column; }
+  .meta-row .m b { font-family: var(--mono); font-size: 1.15rem; font-variant-numeric: tabular-nums; color: #fff; }
+  .meta-row .m span { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: #99A0AC; }
+
+  /* ---------- Disclaimer ---------- */
+  .notice {
+    display: flex; gap: .9rem;
+    background: var(--amber-soft);
+    border: 1px solid #EAD3A8;
+    border-radius: 14px;
+    padding: 1.1rem 1.3rem;
+    margin: 1.6rem 0;
+    font-size: .93rem; line-height: 1.55; color: #5A3D0E;
+  }
+  .notice .ic { flex: none; width: 1.6rem; height: 1.6rem; }
+  .notice b { color: #7a4d09; }
+
+  /* ---------- Section scaffolding ---------- */
+  section { margin-top: 2.6rem; }
+  .sec-head { display: flex; align-items: baseline; gap: .8rem; margin-bottom: 1.1rem; }
+  .sec-head h2 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(1.4rem, 3.6vw, 1.9rem); margin: 0; letter-spacing: -.01em;
+    text-wrap: balance;
+  }
+  .sec-head .tag {
+    font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--emerald); font-weight: 700; padding: .2rem .5rem;
+    background: var(--emerald-soft); border-radius: 999px; white-space: nowrap;
+  }
+
+  /* ---------- Outcomes grid ---------- */
+  .outcomes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 14px; padding: 1.2rem 1.3rem; box-shadow: var(--shadow);
+  }
+  .card h3 { margin: 0 0 .4rem; font-size: 1rem; font-weight: 700; }
+  .card p { margin: 0; font-size: .9rem; color: var(--ink-soft); }
+
+  /* ---------- Modules ---------- */
+  .module {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; box-shadow: var(--shadow);
+    margin-bottom: 1.2rem; overflow: hidden;
+  }
+  .mod-head {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.3rem clamp(1.1rem, 3vw, 1.6rem) 1rem;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #fff, var(--surface-2));
+  }
+  .mod-num {
+    flex: none; font-family: var(--mono); font-weight: 700;
+    font-size: 1rem; color: var(--emerald);
+    width: 2.5rem; height: 2.5rem; display: grid; place-items: center;
+    background: var(--emerald-soft); border-radius: 10px;
+    font-variant-numeric: tabular-nums;
+  }
+  .mod-head .t h3 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; }
+  .mod-head .t .obj { margin: .3rem 0 0; font-size: .92rem; color: var(--ink-soft); }
+  .mod-body { padding: 1.2rem clamp(1.1rem, 3vw, 1.6rem) 1.4rem; }
+
+  .lbl { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; margin: 1.2rem 0 .6rem; }
+  .lbl:first-child { margin-top: 0; }
+
+  ol.steps { margin: 0; padding: 0; counter-reset: st; list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+  ol.steps > li { position: relative; padding-left: 2.2rem; counter-increment: st; font-size: .95rem; color: var(--ink-soft); }
+  ol.steps > li::before {
+    content: counter(st); position: absolute; left: 0; top: -.05rem;
+    width: 1.5rem; height: 1.5rem; display: grid; place-items: center;
+    background: var(--ink); color: #fff; border-radius: 50%;
+    font-size: .78rem; font-weight: 700; font-family: var(--mono);
+  }
+  ol.steps b { color: var(--ink); }
+  code { font-family: var(--mono); font-size: .85em; background: var(--surface-2); border: 1px solid var(--line); padding: .1em .4em; border-radius: 5px; color: var(--rose); }
+
+  /* checklist */
+  .check { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5rem; }
+  .check li { display: flex; align-items: flex-start; gap: .6rem; font-size: .92rem; }
+  .check input { margin-top: .28rem; accent-color: var(--emerald); width: 1rem; height: 1rem; flex: none; }
+  .check input:checked + span { text-decoration: line-through; color: var(--ink-faint); }
+
+  .callout { border-left: 3px solid var(--emerald); background: var(--emerald-soft); padding: .7rem 1rem; border-radius: 0 10px 10px 0; font-size: .9rem; color: #14503a; margin-top: 1rem; }
+  .callout.warn { border-color: var(--rose); background: var(--rose-soft); color: #7a2027; }
+  .callout b { display: block; margin-bottom: .15rem; }
+
+  /* ---------- Numbers panel ---------- */
+  .ledger { background: var(--ink); color: #E7EAEE; border-radius: 16px; padding: clamp(1.4rem, 4vw, 2rem); box-shadow: var(--shadow); }
+  .ledger h2 { font-family: var(--serif); margin: 0 0 .3rem; color: #fff; font-size: 1.5rem; }
+  .ledger .sub { color: #9AA1AD; font-size: .9rem; margin: 0 0 1.4rem; }
+  .lines { display: flex; flex-direction: column; gap: .1rem; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .lines .ln { display: flex; justify-content: space-between; padding: .55rem 0; border-bottom: 1px dashed rgba(255,255,255,.14); font-size: .95rem; }
+  .lines .ln span:first-child { color: #B6BCC6; }
+  .lines .ln.pos span:last-child { color: #6FD8A4; }
+  .lines .ln.neg span:last-child { color: #E8A0A6; }
+  .lines .ln.total { border-bottom: none; margin-top: .5rem; padding-top: .9rem; border-top: 2px solid rgba(255,255,255,.25); font-size: 1.25rem; font-weight: 700; }
+  .lines .ln.total span:last-child { color: #6FD8A4; }
+
+  /* ---------- Glossary ---------- */
+  .gloss { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .9rem; }
+  .gloss dl { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; box-shadow: var(--shadow); }
+  .gloss dt { font-weight: 700; font-size: .95rem; margin-bottom: .2rem; }
+  .gloss dd { margin: 0; font-size: .88rem; color: var(--ink-soft); }
+
+  /* ---------- Sources strip ---------- */
+  .sources { margin-top: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.2rem; box-shadow: var(--shadow); }
+  .sources .s-lbl { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; }
+  .sources .s-item { font-size: .9rem; color: var(--ink-soft); margin-top: .5rem; padding-left: .9rem; border-left: 3px solid var(--line-strong); }
+  .sources .s-item:first-of-type { border-left-color: var(--emerald); }
+  .sources .s-item:last-of-type { border-left-color: var(--amber); }
+  .sources .s-item b { color: var(--ink); }
+
+  /* ---------- Part divider ---------- */
+  .part-divider { display: flex; align-items: center; gap: 1rem; margin: 3rem 0 1.4rem; }
+  .part-divider .line { flex: 1; height: 1px; background: var(--line-strong); }
+  .part-divider .badge { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--ink); background: var(--amber-soft); border: 1px solid #EAD3A8; padding: .35rem 1rem; border-radius: 999px; white-space: nowrap; }
+  .part-lede { text-align: center; max-width: 52ch; margin: -.4rem auto 0; color: var(--ink-soft); font-size: .95rem; }
+
+  /* ---------- Calculator ---------- */
+  .calc { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; margin-top: 1.2rem; }
+  .calc-head { padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--line); background: linear-gradient(180deg,#fff,var(--surface-2)); }
+  .calc-head h3 { margin: 0; font-size: 1.15rem; font-weight: 700; }
+  .calc-head p { margin: .3rem 0 0; font-size: .88rem; color: var(--ink-soft); }
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  @media (max-width: 640px) { .calc-grid { grid-template-columns: 1fr; } }
+  .calc-inputs { padding: 1.2rem 1.4rem; display: flex; flex-direction: column; gap: .8rem; border-right: 1px solid var(--line); }
+  @media (max-width: 640px) { .calc-inputs { border-right: none; border-bottom: 1px solid var(--line); } }
+  .fld { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .fld label { font-size: .88rem; color: var(--ink-soft); }
+  .fld input { width: 6.5rem; font-family: var(--mono); font-size: .92rem; text-align: right; padding: .35rem .5rem; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface-2); color: var(--ink); font-variant-numeric: tabular-nums; }
+  .fld input:focus { outline: 2px solid var(--emerald); outline-offset: 1px; border-color: var(--emerald); }
+  .calc-out { padding: 1.2rem 1.4rem; display: flex; flex-direction: column; gap: .1rem; background: var(--ink); }
+  .calc-out .oh { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: #8A919D; font-weight: 700; margin-bottom: .4rem; }
+  .calc-out .oh.t2 { margin-top: 1rem; }
+  .calc-out .orow { display: flex; justify-content: space-between; padding: .45rem 0; border-bottom: 1px dashed rgba(255,255,255,.14); font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .calc-out .orow span:first-child { color: #B6BCC6; font-size: .85rem; }
+  .calc-out .orow span:last-child { color: #6FD8A4; font-weight: 700; font-size: .95rem; }
+  .calc-out .orow.warnv span:last-child { color: #E8A0A6; }
+  .calc-note { padding: .9rem 1.4rem; font-size: .78rem; color: var(--ink-faint); border-top: 1px solid var(--line); background: var(--surface-2); }
+
+  footer { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line-strong); font-size: .82rem; color: var(--ink-faint); text-align: center; }
+
+  @media (max-width: 520px) {
+    .page { font-size: 16px; }
+    .meta-row .m b { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="kicker">Corso pratico · Dropshipping con AI</p>
+    <h1>Da <em>zero</em> a 1.000&nbsp;$ di fatturato in 24&nbsp;ore</h1>
+    <p class="lede">Il metodo completo per lanciare uno store Shopify, validare un prodotto e portare le prime vendite — con l'AI che fa il lavoro pesante e tu che fai l'operatore.</p>
+    <div class="meta-row">
+      <div class="m"><b>16</b><span>Moduli</span></div>
+      <div class="m"><b>~2 h</b><span>Durata lettura</span></div>
+      <div class="m"><b>Base → Avanzato</b><span>Livello</span></div>
+      <div class="m"><b>2</b><span>Video-fonte</span></div>
+    </div>
+  </header>
+
+  <!-- HONEST DISCLAIMER -->
+  <div class="notice">
+    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#B26B15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+    <div>
+      <b>Leggi prima di iniziare.</b> Questo corso è ricavato da un video promozionale: il metodo è reale, ma i numeri "in 24 ore" sono lo scenario migliore, non la norma. Alcune tecniche (riutilizzare video altrui, scaricarli senza watermark) hanno <b>rischi legali di copyright</b>. Il <a href="#reality" style="color:#7a4d09">reality check</a> in fondo spiega cosa aspettarti davvero.
+    </div>
+  </div>
+
+  <div class="sources">
+    <span class="s-lbl">Il corso combina due video</span>
+    <div class="s-item"><b>Parte 1 · Il metodo veloce</b> — store con AI builder, prodotto virale, TikTok Ads · moduli 00–08.</div>
+    <div class="s-item"><b>Parte 2 · Il metodo avanzato</b> — deep research, tema custom, conversione e calcolo margini · moduli 09–15.</div>
+  </div>
+
+  <!-- OUTCOMES -->
+  <section>
+    <div class="sec-head"><h2>Cosa saprai fare alla fine</h2></div>
+    <div class="outcomes">
+      <div class="card"><h3>Aprire lo store</h3><p>Mettere online un negozio Shopify brandizzato in pochi minuti, senza designer né sviluppatore.</p></div>
+      <div class="card"><h3>Scegliere il prodotto</h3><p>Riconoscere un prodotto "vincente" con 3 criteri oggettivi invece di tirare a indovinare.</p></div>
+      <div class="card"><h3>Far scrivere il negozio all'AI</h3><p>Generare testi, colori e pagina prodotto con due prompt e incollarli nel tema.</p></div>
+      <div class="card"><h3>Portare le prime vendite</h3><p>Attivare traffico con TikTok Ads (a pagamento) o riutilizzando video virali (gratis).</p></div>
+    </div>
+  </section>
+
+  <!-- MODULE 0 / MINDSET -->
+  <section>
+    <div class="sec-head"><h2>Parte 1 · Il metodo veloce</h2><span class="tag">video 1 · moduli 00–08</span></div>
+
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">00</div>
+        <div class="t"><h3>Mindset: da manovale a operatore</h3><p class="obj">Il cambio di mentalità su cui poggia tutto il resto.</p></div>
+      </div>
+      <div class="mod-body">
+        <p style="margin-top:0;color:var(--ink-soft)">Il punto chiave del 2026: l'AI è diventata così brava che il tuo valore non è più <em>eseguire</em> il lavoro manuale (scrivere testi, impaginare, cercare fornitori), ma <em>dirigerlo</em>. Diventi un operatore che dice all'AI con precisione cosa deve produrre. Serve però abbastanza consapevolezza per sapere <b>chi</b> compra il prodotto e <b>cosa</b> chiedere all'AI.</p>
+        <div class="callout"><b>Regola d'oro</b>L'AI toglie il lavoro noioso; non toglie le decisioni. Quelle restano tue.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 1 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">01</div>
+        <div class="t"><h3>Crea lo store</h3><p class="obj">Ottenere un negozio Shopify già brandizzato e pronto.</p></div>
+      </div>
+      <div class="mod-body">
+        <p class="lbl">Passi</p>
+        <ol class="steps">
+          <li>Apri un <b>AI store builder</b> e clicca <b>“Build my free store”</b>, poi crea un account.</li>
+          <li>Rispondi alle poche domande di setup, <b>passo per passo</b>.</li>
+          <li>Ricevi uno store Shopify brandizzato su <b>tema premium</b>, precaricato con prodotti di prova.</li>
+        </ol>
+        <p class="lbl">Da sapere</p>
+        <ul class="check">
+          <li><input type="checkbox" id="m1a"><span>Shopify costa <b>1&nbsp;$/mese per i primi 90 giorni</b> (offerta introduttiva).</span></li>
+          <li><input type="checkbox" id="m1b"><span>Il tema arriva con <b>AutoDS già installato</b> — ti servirà nel Modulo 3.</span></li>
+        </ul>
+        <div class="callout"><b>Perché conta</b>Un tempo servivano designer + sviluppatore + copywriter. Oggi sono 5 minuti. Se non hai ancora uno store, <b>è da qui che si parte</b>.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 2 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">02</div>
+        <div class="t"><h3>Product research: i 3 criteri del vincente</h3><p class="obj">Trovare un prodotto “ovviamente virale” che colpisce un bisogno reale.</p></div>
+      </div>
+      <div class="mod-body">
+        <p style="margin-top:0;color:var(--ink-soft)">Ogni prodotto di successo dell'autore aveva <b>tre cose in comune</b>. Usale come filtro.</p>
+        <p class="lbl">I 3 criteri</p>
+        <ol class="steps">
+          <li><b>Prova di concetto</b> — puoi verificare che unità siano <b>già state vendute</b>. Non un'idea teorica, ma domanda dimostrata.</li>
+          <li><b>Viralità</b> — esistono video del prodotto che spaccano (nell'esempio: 24.000 e 61.000 like, con commenti entusiasti).</li>
+          <li><b>Recenza</b> — i video sono <b>recenti</b> (ieri, 4 giorni fa, una settimana fa): segno che l'interesse è vivo <em>ora</em>, non l'anno scorso.</li>
+        </ol>
+        <p class="lbl">Consapevolezza sul pubblico</p>
+        <p style="color:var(--ink-soft);margin:.2rem 0 0">Guarda <b>chi</b> promuove e compra il prodotto. Nell'esempio, un costume intero pensato per donne curvy: identificare con onestà il pubblico reale è metà del lavoro.</p>
+        <div class="callout warn"><b>Errore da evitare</b>Innamorarti di un prodotto “bello” senza prove di vendita, viralità o recenza. Se mancano i dati, non è un vincente: è una scommessa.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 3 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">03</div>
+        <div class="t"><h3>Fornitore e fulfillment</h3><p class="obj">Collegare un fornitore e delegare spedizioni con AutoDS.</p></div>
+      </div>
+      <div class="mod-body">
+        <p class="lbl">Passi</p>
+        <ol class="steps">
+          <li>Salva sul computer la <b>foto del prodotto del competitor</b>.</li>
+          <li>Vai su <b>AliExpress</b> e fai la <b>ricerca per immagine</b> con quella foto.</li>
+          <li>Copia il link di <b>uno qualsiasi</b> dei fornitori (il prezzo mostrato non è decisivo).</li>
+          <li>Apri <b>AutoDS</b> → <b>Add product</b> → incolla il link AliExpress.</li>
+          <li>AutoDS prende in carico il <b>fulfillment</b>, spesso con costo prodotto più basso e spedizioni più rapide.</li>
+        </ol>
+        <p class="lbl">Economia d'esempio</p>
+        <ul class="check">
+          <li><input type="checkbox" id="m3a"><span>Costo via AutoDS ≈ <b>5&nbsp;$ prodotto + 11&nbsp;$ spedizione ≈ 16,40&nbsp;$</b>, consegna in ~12 giorni.</span></li>
+        </ul>
+        <div class="callout"><b>Nota</b>AutoDS è presentato come partner ufficiale/affiliato: è comodo per iniziare, ma è anche un link sponsorizzato. Valuta alternative quando cresci.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 4 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">04</div>
+        <div class="t"><h3>Branding con l'AI: i due prompt</h3><p class="obj">Generare testi, font, colori e pagina prodotto e incollarli nel tema.</p></div>
+      </div>
+      <div class="mod-body">
+        <p class="lbl">Prompt A — il brand</p>
+        <ol class="steps">
+          <li>Copia il testo del <b>Prompt A</b> (dal documento Notion allegato al metodo).</li>
+          <li>Incollalo in <b>Claude</b> (o GPT / Gemini / Grok — è indifferente).</li>
+          <li>Fornisci: <b>foto del prodotto</b>, <b>nome completo dello shop TikTok</b> e <b>URL del post TikTok</b>.</li>
+          <li>Lascia lavorare l'AI: produrrà <b>nomi dei font</b>, <b>schema colori esatto</b> e <b>descrizione prodotto</b> completa.</li>
+        </ol>
+        <p class="lbl">Prompt B — il codice</p>
+        <ol class="steps">
+          <li>Copia il <b>Prompt B</b> e incollalo nella stessa chat: “run next prompt”.</li>
+          <li>L'AI genera il blocco di codice del tema, pronto da incollare.</li>
+        </ol>
+        <p class="lbl">Incollare nel tema Shopify</p>
+        <ol class="steps">
+          <li>Shopify → <b>Online store</b> → sul tema clicca i tre puntini → <b>Edit code</b>.</li>
+          <li>Vai in <b>templates</b> → <b>+ Add a new template / new file</b>.</li>
+          <li>Crea il file <code>product.swimsuit.json</code> (usa il nome del <em>tuo</em> prodotto).</li>
+          <li>Seleziona tutto il contenuto, <b>cancellalo</b> e incolla il testo generato dall'AI → <b>Save</b>.</li>
+          <li>Torna in <b>Products</b>, apri il prodotto importato e cambia il <b>theme template</b> assegnando quello nuovo → <b>Save</b>.</li>
+        </ol>
+        <div class="callout"><b>Risultato</b>La pagina prodotto è già completa di testi. Ti resta solo da caricare le <b>immagini</b>, impostare i <b>prezzi</b> ed eventualmente ritoccare i colori.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 5 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">05</div>
+        <div class="t"><h3>Pagina prodotto &amp; pricing a bundle</h3><p class="obj">Strutturare i prezzi per spingere l'acquisto multiplo.</p></div>
+      </div>
+      <div class="mod-body">
+        <p style="margin-top:0;color:var(--ink-soft)">La leva di profitto sta nel far comprare più di un'unità. Costruisci i bundle così:</p>
+        <p class="lbl">Struttura consigliata</p>
+        <ol class="steps">
+          <li><b>1 pezzo</b> → il valore <em>peggiore</em> (nessuno sconto).</li>
+          <li><b>2 pezzi</b> → <b>10% di sconto + spedizione gratis</b>.</li>
+          <li><b>3 pezzi</b> → <b>20% di sconto + spedizione gratis</b>.</li>
+        </ol>
+        <div class="callout"><b>Perché funziona</b>Il cliente è incentivato a salire di quantità: alzi lo scontrino medio e diventa molto più facile essere in profitto “sul back end”.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 6 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">06</div>
+        <div class="t"><h3>Traffico a pagamento: TikTok Ads</h3><p class="obj">Lanciare la prima campagna e scalarla se è profittevole.</p></div>
+      </div>
+      <div class="mod-body">
+        <p class="lbl">Setup campagna</p>
+        <ol class="steps">
+          <li>Vai su <code>ads.tiktok.com</code> e sfrutta i <b>crediti pubblicitari</b> (spendi X → ti ridanno X, fino a 6.000&nbsp;$ a fine mese).</li>
+          <li>Budget di partenza consigliato: <b>50&nbsp;$</b> per campagna.</li>
+          <li>Target: <b>Stati Uniti</b>, <b>18+</b>, <b>entrambi i sessi</b>.</li>
+          <li>Programma per la <b>mezzanotte del giorno dopo</b> (così ha 24 ore piene).</li>
+          <li>Imposta gli orari <b>8:00 → mezzanotte</b> per non spendere di notte.</li>
+          <li>Carica le <b>3 creatività video</b>.</li>
+        </ol>
+        <p class="lbl">Scaling (“serve scaling”)</p>
+        <ol class="steps">
+          <li>Se a <b>50&nbsp;$</b> la campagna è profittevole, sali a <b>100&nbsp;$</b> a metà giornata.</li>
+          <li>Se regge, sali a <b>200&nbsp;$</b>. Duplica le campagne che funzionano.</li>
+          <li>Principio: <b>più budget dove già funziona</b>, così la piattaforma spinge il vincente.</li>
+        </ol>
+        <div class="callout"><b>Vantaggio</b>Con i crediti che rientrano, il rischio iniziale per partire è quasi nullo — ma i crediti hanno condizioni: verificale.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 7 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">07</div>
+        <div class="t"><h3>Traffico gratuito: riuso dei video virali</h3><p class="obj">Ottenere clienti senza spendere, riutilizzando contenuti esistenti.</p></div>
+      </div>
+      <div class="mod-body">
+        <p class="lbl">Passi</p>
+        <ol class="steps">
+          <li>Prendi i video già virali del prodotto (individuati nel Modulo 2) → icona <b>Share</b> → copia il link.</li>
+          <li>Incolla il link in un <b>TikTok video downloader</b> e scarica il video <b>senza watermark</b>.</li>
+          <li>Carica i <b>3 video</b> come creatività / contenuto organico.</li>
+        </ol>
+        <div class="callout warn"><b>Disclaimer legale — importante</b>I video riutilizzati non devono mostrare loghi o nomi di <b>altri brand</b>, né violare <b>copyright o marchi</b>. Nella pratica scaricare e ripubblicare contenuti altrui è un'area a rischio: procedi solo con materiale di cui hai i diritti.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 8 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">08</div>
+        <div class="t"><h3>Leggere i numeri</h3><p class="obj">Capire l'economia reale dietro al “giorno 1”.</p></div>
+      </div>
+      <div class="mod-body">
+        <p style="margin-top:0;color:var(--ink-soft)">Il fatturato non è il profitto. Ecco il conto del caso studio (primo giorno, 19 ordini):</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEDGER -->
+  <section class="ledger" aria-label="Conto economico del caso studio">
+    <h2>Il conto del giorno 1</h2>
+    <p class="sub">19 ordini · store di dropshipping appena lanciato</p>
+    <div class="lines">
+      <div class="ln pos"><span>Fatturato totale</span><span>+1.188&nbsp;$</span></div>
+      <div class="ln neg"><span>Spesa in TikTok Ads</span><span>−400&nbsp;$</span></div>
+      <div class="ln neg"><span>Costo prodotti + spedizioni (fulfillment)</span><span>−…</span></div>
+      <div class="ln neg"><span>Commissioni di transazione</span><span>−…</span></div>
+      <div class="ln total"><span>Profitto netto</span><span>313&nbsp;$</span></div>
+    </div>
+    <p class="sub" style="margin:1.2rem 0 0">≈ <b style="color:#fff">26%</b> di margine netto sul fatturato. Buono per un giorno 1 — ma lontano dal “1K in tasca”: quel numero era il <em>fatturato</em>, non il guadagno.</p>
+  </section>
+
+  <!-- ===================== PART 2 ===================== -->
+  <div class="part-divider">
+    <span class="line"></span>
+    <span class="badge">Parte 2 · Il metodo avanzato</span>
+    <span class="line"></span>
+  </div>
+  <p class="part-lede">Dallo stesso mondo ma con un approccio più esigente: niente store “copia-incolla”, ma ricerca approfondita, testi costruiti sul cliente e numeri che tornano <em>prima</em> di spendere in ads. La filosofia qui è: <b>“semplice ma non facile”</b>.</p>
+
+  <section>
+    <div class="sec-head"><h2>Parte 2 · Costruire un vero brand</h2><span class="tag">video 2 · moduli 09–15</span></div>
+
+    <!-- MODULE 09 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">09</div>
+        <div class="t"><h3>Mindset onesto: semplice ≠ facile</h3><p class="obj">Perché il dropshipping non è “morto”, ma nemmeno il gioco da ragazzi dei guru.</p></div>
+      </div>
+      <div class="mod-body">
+        <p style="margin-top:0;color:var(--ink-soft)">La formula di base non è mai cambiata: <b>trovi un prodotto che colpisce un desiderio → costruisci uno store attorno → lanci ads convincenti</b>. Ciò che è cambiato è la <b>competizione sugli annunci</b>: le creatività devono essere sempre migliori. Chi dice che “il dropshipping è morto” di solito non sa usare gli strumenti AI o comunicare con i creator UGC.</p>
+        <div class="callout"><b>La differenza vera</b>Uno store pigro fatto con l'AI builder resta “un foglio di carta 2D”. Un brand curato “fiorisce”. Il metodo veloce ti fa partire; questo ti fa durare.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 10 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">10</div>
+        <div class="t"><h3>Criteri prodotto v2: margine, bundle, funziona</h3><p class="obj">Un filtro più semplice ma più severo di quello dei “guru”.</p></div>
+      </div>
+      <div class="mod-body">
+        <p class="lbl">I 3 filtri che contano davvero</p>
+        <ol class="steps">
+          <li><b>Margine sul costo del prodotto</b> — regola pratica: se il costo è <b>~8&nbsp;$</b>, vendi ad <b>almeno 40&nbsp;$</b> (≈ 4–5×). Serve spazio per pagare le ads.</li>
+          <li><b>Potenziale di bundle</b> — puoi abbinare un applicatore, una custodia, un kit? Tutto ciò che alza l'<b>average order value</b> (AOV).</li>
+          <li><b>Funziona davvero</b> — non puoi costruire un brand su un prodotto che delude. Deve mantenere la promessa.</li>
+        </ol>
+        <p class="lbl">Bonus: ricorrenza</p>
+        <p style="color:var(--ink-soft);margin:.2rem 0 0">Se il prodotto si consuma (es. dura ~30 giorni), spingi la <b>subscription</b>: dal 2° acquisto in poi non paghi ads → è quasi una vendita gratis, meno il costo del prodotto.</p>
+        <div class="callout"><b>Esempio del video</b>Cerotti oculari al PDRN: costo ~3–7&nbsp;$ su ZenDrop, venduti ~39&nbsp;$; “meccanismo unico” che il pubblico non ha ancora sentito → angolo pubblicitario forte. Con kit + applicatori l'AOV sale a 60–70&nbsp;$.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 11 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">11</div>
+        <div class="t"><h3>Product research con uno spy-tool</h3><p class="obj">Trovare negozi e prodotti in salita con filtri precisi (es. Copperfied).</p></div>
+      </div>
+      <div class="mod-body">
+        <p style="margin-top:0;color:var(--ink-soft)">Uno spy-tool ti fa sfogliare shop, prodotti e ads della concorrenza. Imposta questi filtri per stanare i vincenti emergenti:</p>
+        <p class="lbl">Criteri di ricerca</p>
+        <ol class="steps">
+          <li><b>Traffic growth</b> → <b>trend in salita</b>.</li>
+          <li><b>Active ads</b> → tra <b>25 e 200</b> (abbastanza per validare, non troppo saturo).</li>
+          <li><b>Mercati</b> → <b>USA, UK, Canada, Australia</b> (i “big four” anglofoni).</li>
+          <li><b>Tema</b> → filtra sui temi tipici da dropshipping (es. Shrine / Shrine Pro): segnala che dietro c'è un dropshipper.</li>
+        </ol>
+        <div class="callout"><b>Cosa cercare scorrendo</b>Un “wow factor” e segnali precoci di prodotto vincente. Poi passi alla ricerca approfondita (Modulo 12).</div>
+      </div>
+    </div>
+
+    <!-- MODULE 12 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">12</div>
+        <div class="t"><h3>Deep research con l'AI</h3><p class="obj">Capire il cliente meglio del competitor, prima di scrivere una riga di copy.</p></div>
+      </div>
+      <div class="mod-body">
+        <p style="margin-top:0;color:var(--ink-soft)">Copia l'intera pagina prodotto del competitor, incollala in un progetto <b>Claude</b> e chiedi un'analisi basata su copy, recensioni Amazon, thread Reddit, commenti Facebook e articoli. I <b>4 assi</b> da farti restituire:</p>
+        <ol class="steps">
+          <li><b>Market sophistication</b> (1–5) — quanto è “smaliziato” il mercato rispetto a claim e offerte.</li>
+          <li><b>Awareness level</b> (1–5) — quanto il pubblico conosce già il prodotto/meccanismo e i suoi benefici.</li>
+          <li><b>Past failures</b> — cosa ha già provato senza successo (e come puoi batterlo).</li>
+          <li><b>Obiezioni all'acquisto</b> — i dubbi ricorrenti da smontare nel copy.</li>
+        </ol>
+        <div class="callout"><b>Il vantaggio</b>La maggior parte dei copywriter chiede all'AI di “scrivere copy”. Tu prima capisci <b>esattamente cosa il cliente deve sentirsi dire</b>, poi fai scrivere il copy su quella base. È la differenza tra generico e persuasivo.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 13 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">13</div>
+        <div class="t"><h3>Branding e immagini prodotto</h3><p class="obj">Un nome, un logo e un set di immagini che non sembrano “da dropshipping”.</p></div>
+      </div>
+      <div class="mod-body">
+        <p class="lbl">Nome e logo</p>
+        <ol class="steps">
+          <li>Trova un <b>nome brand</b> semplice legato al prodotto (nel video: “Patch For You” per i cerotti).</li>
+          <li>Dai un <b>colore accento</b> e sistema il logo; in Shopify: <code>Settings → Logo</code>.</li>
+        </ol>
+        <p class="lbl">Immagini prodotto — la formula riutilizzabile</p>
+        <ol class="steps">
+          <li>Crea <b>una volta</b> un set perfetto: 3 testimonianze, 1 call to action finale, 2 info-prodotto, 1 before/after.</li>
+          <li>Per ogni nuovo prodotto: carica in <b>ChatGPT</b> il set esistente + la foto nuova e chiedi “<i>crea un'immagine nel formato della prima, ma col nuovo prodotto</i>”.</li>
+          <li><b>Aggiorna il copy</b> delle immagini sulla base della deep research del Modulo 12.</li>
+        </ol>
+        <div class="callout"><b>Perché molti falliscono</b>Pigrizia: lo store sembra identico a mille altri. Il branding curato è ciò che lo distingue.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 14 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">14</div>
+        <div class="t"><h3>Store con tema custom + copy dalla ricerca</h3><p class="obj">Un tema ottimizzato, non il preset dell'AI builder.</p></div>
+      </div>
+      <div class="mod-body">
+        <p class="lbl">Importare il tema</p>
+        <ol class="steps">
+          <li>Shopify → <b>Online store → Themes → Add theme → Import → Upload zip file</b> e carica il tuo tema ottimizzato.</li>
+          <li>Apri l'editor e parti dalla <b>pagina prodotto</b> (Homepage → Products → default product → preview → seleziona il tuo).</li>
+        </ol>
+        <p class="lbl">Testi guidati dai dati</p>
+        <ol class="steps">
+          <li>Copia il <b>titolo</b> e chiedi a Claude: “<i>Fammi un titolo che converte basato su tutta la ricerca</i>” (usa market sophistication, awareness, past failures).</li>
+          <li>Fai lo stesso per <b>benefici</b> e descrizioni: sempre ancorati alla ricerca, mai generici.</li>
+          <li>Per le immagini che servono: fatti creare il <b>prompt</b> da Claude, poi generale in ChatGPT.</li>
+        </ol>
+        <div class="callout"><b>Esempio di headline</b>“I cerotti al PDRN sono il vero motivo per cui le donne coreane hanno smesso di farsi il filler sotto gli occhi.” → poi 3 benefici. Angolo specifico, non slogan vuoto.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 15 -->
+    <div class="module">
+      <div class="mod-head">
+        <div class="mod-num">15</div>
+        <div class="t"><h3>Conversione avanzata &amp; AOV</h3><p class="obj">Le leve che rendono lo store profittevole “sul back end”.</p></div>
+      </div>
+      <div class="mod-body">
+        <p class="lbl">Pricing e bundle</p>
+        <ol class="steps">
+          <li><b>1 unità</b> a prezzo pieno (nel video 39,95&nbsp;$, in linea col competitor).</li>
+          <li><b>Buy 2 get 1 free</b> + spedizione gratis → è l'opzione che sceglie il 50–70% delle persone (AOV ~72&nbsp;$).</li>
+          <li><b>Fake scarcity</b> (tecnica sperimentale): mostra il bundle più grande come “sold out” per spingere verso quello disponibile. <span style="color:var(--rose)">Attenzione: scarsità falsa = pratica scorretta e in molti paesi illegale.</span></li>
+        </ol>
+        <p class="lbl">Extra ad alta leva</p>
+        <ul class="check">
+          <li><input type="checkbox" id="a15a"><span><b>Post-purchase upsell</b>: dopo il pagamento, un clic aggiunge un altro prodotto scontato (–50%). Carta e indirizzo già inseriti → conversione altissima.</span></li>
+          <li><input type="checkbox" id="a15b"><span><b>Shipping protection</b> nel carrello.</span></li>
+          <li><input type="checkbox" id="a15c"><span><b>Subscription</b> per i prodotti che si consumano.</span></li>
+        </ul>
+        <div class="callout warn"><b>Nota etica</b>Upsell e bundle sono legittimi. La <b>scarsità finta</b> (“sold out” non vero) inganna il cliente e viola le norme sulle pratiche commerciali in UE/UK. Usa scarsità <em>reale</em> o lasciala perdere.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CALCULATOR ===================== -->
+  <section>
+    <div class="sec-head"><h2>Strumento · Calcolatore di profittabilità</h2><span class="tag">interattivo</span></div>
+    <p style="margin:0 0 .4rem;color:var(--ink-soft)">Prima di spendere in ads devi sapere <b>quanto puoi permetterti di pagare per una vendita</b>. Cambia i valori e i numeri chiave si aggiornano da soli.</p>
+    <div class="calc">
+      <div class="calc-head">
+        <h3>Break-even &amp; target ads</h3>
+        <p>Basato sul contributo per ordine. Valori iniziali = esempio del video (cerotti PDRN).</p>
+      </div>
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <div class="fld"><label for="price">Prezzo di vendita ($)</label><input id="price" type="number" step="0.01" value="39.95"></div>
+          <div class="fld"><label for="ship">Spedizione pagata dal cliente ($)</label><input id="ship" type="number" step="0.01" value="4.99"></div>
+          <div class="fld"><label for="cogs">Costo prodotto + spedizione ($)</label><input id="cogs" type="number" step="0.01" value="7.87"></div>
+          <div class="fld"><label for="fee">Commissione pagamento (%)</label><input id="fee" type="number" step="0.1" value="2.7"></div>
+          <div class="fld"><label for="fixed">Commissione fissa/ordine ($)</label><input id="fixed" type="number" step="0.01" value="0.25"></div>
+          <div class="fld"><label for="cr">Conversion rate (%)</label><input id="cr" type="number" step="0.1" value="5"></div>
+          <div class="fld"><label for="margin">Margine netto obiettivo (%)</label><input id="margin" type="number" step="1" value="30"></div>
+        </div>
+        <div class="calc-out">
+          <div class="oh">Pareggio (break-even)</div>
+          <div class="orow"><span>Contributo per ordine</span><span id="o-contrib">—</span></div>
+          <div class="orow"><span>Costo max per vendita (CPA)</span><span id="o-cpa">—</span></div>
+          <div class="orow"><span>ROAS di pareggio</span><span id="o-roas">—</span></div>
+          <div class="orow"><span>Costo max per clic (CPC)</span><span id="o-cpc">—</span></div>
+          <div class="oh t2">Al margine obiettivo</div>
+          <div class="orow"><span>Ad spend max per vendita</span><span id="o-tcpa">—</span></div>
+          <div class="orow"><span>ROAS obiettivo</span><span id="o-troas">—</span></div>
+        </div>
+      </div>
+      <div class="calc-note">CPA = contributo per ordine · ROAS = ricavo per ordine ÷ ad spend · CPC = CPA × conversion rate. Modello semplificato: non include resi, IVA/tasse o costi fissi. Serve a ragionare, non a garantire risultati.</div>
+    </div>
+  </section>
+
+  <!-- REALITY CHECK -->
+  <section id="reality">
+    <div class="sec-head"><h2>Reality check</h2><span class="tag">leggere con occhio critico</span></div>
+    <div class="outcomes">
+      <div class="card"><h3>È marketing</h3><p>Il video vende link affiliati (store builder, AutoDS, TikTok credits) e un coaching a pagamento. Il metodo è vero, ma la cornice è promozionale.</p></div>
+      <div class="card"><h3>“24 ore” è il best case</h3><p>Risultati mostrati = giornata migliore selezionata. La maggior parte dei test non diventa profittevole al giorno 1.</p></div>
+      <div class="card"><h3>Rischi legali reali</h3><p>Riusare video altrui e scaricarli senza watermark può violare copyright e marchi — l'autore stesso lo ammette di sfuggita.</p></div>
+      <div class="card"><h3>Costi ricorrenti</h3><p>Dopo i 90 giorni Shopify non è più 1&nbsp;$; ads, resi, tempi di spedizione lunghi (~12 gg) e resi incidono sui margini.</p></div>
+      <div class="card"><h3>“Store in 30 min” ≠ business</h3><p>Il video 2 costruisce lo store in mezz'ora, ma ammette che le ads (la parte difficile) sono “nel prossimo video”. La vetrina è veloce; la profittabilità no.</p></div>
+      <div class="card"><h3>Scarsità finta = illegale</h3><p>Il “sold out” non reale mostrato nel video 2 inganna il cliente e viola le norme UE/UK sulle pratiche commerciali sleali. Evitala.</p></div>
+      <div class="card"><h3>Anche “gratis” vende</h3><p>Entrambi i creator offrono corsi/community “gratuiti”: sono funnel verso coaching, affiliazioni e prodotti a pagamento. Ottimo materiale, ma è marketing.</p></div>
+    </div>
+  </section>
+
+  <!-- GLOSSARY -->
+  <section>
+    <div class="sec-head"><h2>Glossario</h2></div>
+    <div class="gloss">
+      <dl><dt>Dropshipping</dt><dd>Vendere senza magazzino: quando arriva un ordine, il fornitore spedisce direttamente al cliente.</dd></dl>
+      <dl><dt>Proof of concept</dt><dd>Prova che il prodotto vende già: unità vendute e domanda dimostrata prima di investirci.</dd></dl>
+      <dl><dt>AutoDS</dt><dd>Servizio che automatizza il fulfillment: importa il prodotto, gestisce ordini e spedizioni.</dd></dl>
+      <dl><dt>Theme template</dt><dd>File del tema Shopify (es. <code>product.nome.json</code>) che definisce l'aspetto di una pagina prodotto.</dd></dl>
+      <dl><dt>Bundle</dt><dd>Offerta a quantità multipla con sconto crescente per alzare lo scontrino medio.</dd></dl>
+      <dl><dt>Serve / budget scaling</dt><dd>Aumentare il budget di una campagna che già funziona per farle spendere di più sul vincente.</dd></dl>
+      <dl><dt>Ad credits</dt><dd>Crediti pubblicitari che la piattaforma restituisce in base alla spesa, riducendo il rischio iniziale.</dd></dl>
+      <dl><dt>Operatore</dt><dd>Chi dirige l'AI dicendole con precisione cosa produrre, invece di fare il lavoro manuale.</dd></dl>
+      <dl><dt>AOV (Average Order Value)</dt><dd>Valore medio dell'ordine. Bundle e upsell servono ad alzarlo.</dd></dl>
+      <dl><dt>Market sophistication</dt><dd>Quanto un mercato è già “smaliziato” su claim e offerte: più è alto, più devi essere originale.</dd></dl>
+      <dl><dt>Awareness level</dt><dd>Quanto il pubblico conosce già prodotto e benefici: guida il tono del copy.</dd></dl>
+      <dl><dt>ROAS</dt><dd>Return on Ad Spend: ricavo ÷ spesa in ads. ROAS 2 = 2&nbsp;$ di ricavo per 1&nbsp;$ di ads.</dd></dl>
+      <dl><dt>Break-even CPA</dt><dd>Costo massimo per acquisizione a cui vai in pari: il contributo per ordine dopo prodotto e commissioni.</dd></dl>
+      <dl><dt>CPC</dt><dd>Costo per clic. Legato al CPA tramite il conversion rate (CPC = CPA × CR).</dd></dl>
+      <dl><dt>Post-purchase upsell</dt><dd>Offerta scontata subito dopo il pagamento, con un solo clic: leva di profitto ad alta resa.</dd></dl>
+      <dl><dt>UGC</dt><dd>User-Generated Content: video in stile “creator reale”, oggi la base delle ads che convertono.</dd></dl>
+      <dl><dt>Spy-tool</dt><dd>Strumento (es. Copperfied) per spiare shop, prodotti e ads della concorrenza in tendenza.</dd></dl>
+      <dl><dt>Fake scarcity</dt><dd>Scarsità simulata (“sold out” non vero) per forzare l'acquisto. Ingannevole e vietata in UE/UK.</dd></dl>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var ids = ['price','ship','cogs','fee','fixed','cr','margin'];
+      var el = {};
+      ids.forEach(function (k) { el[k] = document.getElementById(k); });
+      var out = {
+        contrib: document.getElementById('o-contrib'),
+        cpa: document.getElementById('o-cpa'),
+        roas: document.getElementById('o-roas'),
+        cpc: document.getElementById('o-cpc'),
+        tcpa: document.getElementById('o-tcpa'),
+        troas: document.getElementById('o-troas')
+      };
+      function money(n) { return isFinite(n) ? '$' + n.toFixed(2) : '—'; }
+      function x(n) { return isFinite(n) ? n.toFixed(2) + '×' : '—'; }
+      function warn(node, bad) { node.parentElement.classList.toggle('warnv', bad); }
+      function calc() {
+        var price = +el.price.value, ship = +el.ship.value, cogs = +el.cogs.value;
+        var fee = +el.fee.value / 100, fixed = +el.fixed.value;
+        var cr = +el.cr.value / 100, margin = +el.margin.value / 100;
+        var revenue = price + ship;                       // ricavo che entra allo store
+        var fees = price * fee + fixed;                   // commissioni sul prezzo
+        var contrib = revenue - cogs - fees;              // contributo prima delle ads = break-even CPA
+        var beRoas = contrib > 0 ? revenue / contrib : Infinity;
+        var beCpc = contrib * cr;
+        var tCpa = contrib - margin * revenue;            // ad spend max al margine obiettivo
+        var tRoas = tCpa > 0 ? revenue / tCpa : Infinity;
+        out.contrib.textContent = money(contrib);
+        out.cpa.textContent = money(contrib);
+        out.roas.textContent = x(beRoas);
+        out.cpc.textContent = money(beCpc);
+        out.tcpa.textContent = money(tCpa);
+        out.troas.textContent = x(tRoas);
+        warn(out.contrib, contrib <= 0);
+        warn(out.cpa, contrib <= 0);
+        warn(out.tcpa, tCpa <= 0);
+      }
+      ids.forEach(function (k) { el[k].addEventListener('input', calc); });
+      calc();
+    })();
+  </script>
+
+</body>
+</html>
+
+  <footer>
+    Corso didattico ricostruito da una trascrizione video, riorganizzato in moduli con note critiche. Materiale a scopo educativo — nessun risultato economico è garantito.
+  </footer>
+
+</div>
+</div>
